@@ -63,9 +63,9 @@ Be sure to resolve any dependency conflicts!
 ### Getting ready to create your component
 
 - Create a feature branch: [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
-    - jk
-
-- Learn some React: [React for Python Developers: a primer](https://dash.plotly.com/react-for-python-developers)
+    - Checkout a new branch: `git checkout -b button-feature master`
+- Learn some React (see "Quick intro to React", "Our very own React component
+", and "Using your React components in Dash" sections for step-by-step instructions): [React for Python Developers: a primer](https://dash.plotly.com/react-for-python-developers)
 
 ---
 
