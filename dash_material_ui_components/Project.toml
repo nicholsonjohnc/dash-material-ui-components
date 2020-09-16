@@ -1,0 +1,12 @@
+
+name = "DashMaterialUiComponents"
+uuid = "1b08a953-4be3-4667-9a23-d000ecb1a82a"
+authors = ["John Nicholson <j.nicholson.phd@gmail.com>"]
+version = "0.0.1"
+
+[deps]
+Dash = "1b08a953-4be3-4667-9a23-3db579824955"
+
+[compat]
+julia = "1.2"
+Dash = ">=0.1"

@@ -1,0 +1,7 @@
+include dash_material_ui_components/dash_material_ui_components.min.js
+include dash_material_ui_components/dash_material_ui_components.min.js.map
+include dash_material_ui_components/metadata.json
+include dash_material_ui_components/package-info.json
+include README.md
+include LICENSE
+include package.json
