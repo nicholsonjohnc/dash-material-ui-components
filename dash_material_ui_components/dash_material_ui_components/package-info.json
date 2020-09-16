@@ -2,7 +2,7 @@
   "name": "dash_material_ui_components",
   "version": "0.0.1",
   "description": "Dash component library wrapping Material-UI React component library",
-"repository": {
+  "repository": {
     "type": "git",
     "url": "git://github.com/nicholsonjohnc/dash-material-ui-components.git"
   },
@@ -24,6 +24,7 @@
   "author": "John Nicholson <j.nicholson.phd@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "ramda": "^0.26.1"
   },
   "devDependencies": {

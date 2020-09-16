@@ -1,14 +1,16 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
 
-import { DashMaterialUiComponents } from '../lib';
+// import { DashMaterialUiComponents } from '../lib';
+import { Button } from '../lib';
 
 class App extends Component {
 
     constructor() {
         super();
         this.state = {
-            value: ''
+            value: '',
+            label: 'Label'
         };
         this.setProps = this.setProps.bind(this);
     }
@@ -20,7 +22,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <DashMaterialUiComponents
+                <Button
                     setProps={this.setProps}
                     {...this.state}
                 />
