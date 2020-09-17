@@ -98,6 +98,13 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
+# dev hmr
+*hmr.js
+*hmr.json
+output.js
+*.min.js
+*.min.js.map
+
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 

@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 
 // import { DashMaterialUiComponents } from '../lib';
-import { Button } from '../lib';
+import { Button, Table } from '../lib';
 
 class App extends Component {
 
@@ -22,10 +22,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Button
+                {/* <Button
                     setProps={this.setProps}
                     {...this.state}
-                />
+                /> */}
             </div>
         )
     }
