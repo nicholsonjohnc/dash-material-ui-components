@@ -4,7 +4,7 @@ from dash.dependencies import Input, State, Output
 import dash_html_components as html
 import pandas as pd
 
-app = dash.Dash(__name__, serve_locally=False)
+app = dash.Dash(__name__, external_stylesheets=['https://fonts.googleapis.com/icon?family=Material+Icons'])
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
