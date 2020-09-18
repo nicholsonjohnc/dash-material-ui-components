@@ -6,21 +6,16 @@ export mui_table
     mui_table(;kwargs...)
 
 A Table component.
-Button wraps Material-UI Button.
-
-Use the `n_clicks` prop to trigger callbacks when the button has been clicked.
+Table wraps Material-UI Table.
 Keyword arguments:
 - `id` (String; optional): The ID used to identify this component in Dash callbacks.
-- `text` (String; required): Button text.
-- `variant` (String; optional): Material-UI Button variant prop.
-- `color` (String; optional): Material-UI Button color prop.
-- `href` (String; optional): Material-UI Button href prop.
-- `disableElevation` (Bool; optional): Material-UI Button disableElevation prop.
-- `disabled` (Bool; optional): Material-UI Button disabled prop.
-- `n_clicks` (Real; optional): An integer that represents the number of times that this element has been clicked on.
+- `title` (String; required): Material Table title
+- `rowColor` (String; optional): Material Table Row Color
+- `headerColor` (String; optional): Material Table Header Color
+- `data` (Array; optional): Material Table Data
 """
 function mui_table(; kwargs...)
-        available_props = Symbol[:id, :text, :variant, :color, :href, :disableElevation, :disabled, :n_clicks]
+        available_props = Symbol[:id, :title, :rowColor, :headerColor, :data]
         wild_props = Symbol[]
         return Component("mui_table", "Table", "dash_material_ui_components", available_props, wild_props; kwargs...)
 end

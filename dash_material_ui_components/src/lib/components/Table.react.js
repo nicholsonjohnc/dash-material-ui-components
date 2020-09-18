@@ -1,83 +1,104 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {default as MUIButton} from '@material-ui/core/Button';
+import React, { useState, useMemo } from 'react'
+import MaterialTable from 'material-table'
+import startCase from 'lodash/startCase'
+import PropTypes from 'prop-types'
 
 /**
- * Button wraps Material-UI Button.
- * 
- * Use the `n_clicks` prop to trigger callbacks when the button has been clicked.
+ * Table wraps Material-UI Table.
  */
-export default class Button extends Component {
-  render() {
-    const {id, text, variant, color, href, disableElevation, disabled, n_clicks, setProps} = this.props;
 
-    setProps({n_clicks: n_clicks});
+export default function Table(props) {
+  const { title, rowColor, headerColor } = props
+  const [data, setData] = useState(props.data)
 
-    return (
-      <MUIButton 
-        id={id} 
-        variant={variant} 
-        color={color} 
-        href={href} 
-        disableElevation={disableElevation} 
-        disabled={disabled}
-        onClick={e => setProps({
-          n_clicks: n_clicks + 1
-        })}
-      >
-        {text}
-      </MUIButton>
-    );
-  }
+  const columns = useMemo(() => {
+    if (props.data.length) {
+      return Object.keys(props.data[0]).map(col => ({
+        title: startCase(col),
+        field: col
+      }))
+    } else {
+      return []
+    }
+  }, [props.data])
+
+  const options = useMemo(() => {
+    const opt = {columnsButton: true}
+    if (rowColor) {
+      opt.rowStyle = {
+        backgroundColor: rowColor
+      }
+    }
+    if (headerColor) {
+      opt.headerStyle = {
+        backgroundColor: headerColor
+      }
+    }
+    return opt
+  }, [rowColor, headerColor])
+
+  return (
+    <MaterialTable
+      title={title}
+      columns={columns}
+      data={data}
+      options={options}
+      editable={{
+        onRowAdd: newData =>
+          new Promise(resolve => {
+            setData(prev => {
+              return prev.concat([newData])
+            })
+            resolve()
+          }),
+        onRowUpdate: (newData, oldData) =>
+          new Promise(resolve => {
+            if (oldData) {
+              setData(prev => {
+                const data = [...prev]
+                data[data.indexOf(oldData)] = newData
+                return data
+              })
+            }
+            resolve()
+          }),
+        onRowDelete: oldData =>
+          new Promise(resolve => {
+            setData(prev => {
+              const data = [...prev]
+              data.splice(data.indexOf(oldData), 1)
+              return data
+            })
+            resolve()
+          })
+      }}
+    />
+  )
 }
 
-Button.defaultProps = {
-  n_clicks: 0
-};
-
-Button.propTypes = {
+Table.propTypes = {
   /**
    * The ID used to identify this component in Dash callbacks.
    */
   id: PropTypes.string,
 
   /**
-   * Button text.
+   * Material Table title
    */
-  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 
   /**
-   * Material-UI Button variant prop.
+   * Material Table Row Color
    */
-  variant: PropTypes.string,
+  rowColor: PropTypes.string,
 
   /**
-   * Material-UI Button color prop.
+   * Material Table Header Color
    */
-  color: PropTypes.string,
+  headerColor: PropTypes.string,
 
   /**
-   * Material-UI Button href prop.
+   * Material Table Data
    */
-  href: PropTypes.string,
-
-  /**
-   * Material-UI Button disableElevation prop.
-   */
-  disableElevation: PropTypes.bool,
-
-  /**
-   * Material-UI Button disabled prop.
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * An integer that represents the number of times that this element has been clicked on.
-   */
-  n_clicks: PropTypes.number,
-
-  /**
-   * Dash-assigned callback that should be called to report property changes to Dash, to make them available for callbacks.
-   */
-  setProps: PropTypes.func
-};
+  data: PropTypes.array
+}

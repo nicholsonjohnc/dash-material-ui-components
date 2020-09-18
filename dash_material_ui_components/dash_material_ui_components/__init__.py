@@ -45,7 +45,11 @@ _js_dist = [
     }
 ]
 
-_css_dist = []
+_css_dist = [
+    {
+        'external_url': 'https://fonts.googleapis.com/icon?family=Material+Icons'
+    }
+]
 
 
 for _component in __all__:

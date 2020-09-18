@@ -109,8 +109,8 @@
     }
   },
   "src/lib/components/Table.react.js": {
-    "description": "Button wraps Material-UI Button.\n\nUse the `n_clicks` prop to trigger callbacks when the button has been clicked.",
-    "displayName": "Button",
+    "description": "Table wraps Material-UI Table.",
+    "displayName": "Table",
     "methods": [],
     "props": {
       "id": {
@@ -120,65 +120,33 @@
         "required": false,
         "description": "The ID used to identify this component in Dash callbacks."
       },
-      "text": {
+      "title": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": "Button text."
+        "description": "Material Table title"
       },
-      "variant": {
+      "rowColor": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "Material-UI Button variant prop."
+        "description": "Material Table Row Color"
       },
-      "color": {
+      "headerColor": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "Material-UI Button color prop."
+        "description": "Material Table Header Color"
       },
-      "href": {
+      "data": {
         "type": {
-          "name": "string"
+          "name": "array"
         },
         "required": false,
-        "description": "Material-UI Button href prop."
-      },
-      "disableElevation": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Material-UI Button disableElevation prop."
-      },
-      "disabled": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Material-UI Button disabled prop."
-      },
-      "n_clicks": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "An integer that represents the number of times that this element has been clicked on.",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes to Dash, to make them available for callbacks."
+        "description": "Material Table Data"
       }
     }
   }
