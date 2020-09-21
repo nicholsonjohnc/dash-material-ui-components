@@ -142,7 +142,7 @@ Those keys have the following types:
   - pageSizeOptions (list of numbers; optional)
   - paginationType (a value equal to: "normal", "stepped"; optional)
   - paginationPosition (a value equal to: "bottom", "top", "both"; optional)
-  - rowStyle (dict; optional)
+  - rowStyle (boolean | number | string | dict | list; optional)
   - search (boolean; optional)
   - searchText (string; optional)
   - toolbarButtonAlignment (a value equal to: "left", "right"; optional)

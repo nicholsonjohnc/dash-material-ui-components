@@ -1,8 +1,5 @@
 import dash_material_ui_components as mui
 import dash_html_components as html
-import pandas as pd
-
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
 components = (
 	mui.Table(
@@ -49,9 +46,49 @@ components = (
 		),
 		options={
 			'columnsButton': True,
-			'rowStyle': {
-				'backgroundColor': 'yellow'
-			},
+			'rowStyle': (
+				{
+					'backgroundColor': 'lightgray',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'red',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'blue',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'darkgreen',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'yellow',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'yellow',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+				{
+					'backgroundColor': 'yellow',
+					'fontWeight': 'bold',
+					'color': 'white',
+					'padding': '16px'
+				},
+			),
 			'headerStyle': {
 				'backgroundColor': 'lightgray',
 				'fontWeight': 'bold',

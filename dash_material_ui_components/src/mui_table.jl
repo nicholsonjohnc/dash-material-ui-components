@@ -142,7 +142,7 @@ Those elements have the following types:
   - `pageSizeOptions` (Array of Reals; optional)
   - `paginationType` (a value equal to: "normal", "stepped"; optional)
   - `paginationPosition` (a value equal to: "bottom", "top", "both"; optional)
-  - `rowStyle` (Dict; optional)
+  - `rowStyle` (Bool | Real | String | Dict | Array; optional)
   - `search` (Bool; optional)
   - `searchText` (String; optional)
   - `toolbarButtonAlignment` (a value equal to: "left", "right"; optional)

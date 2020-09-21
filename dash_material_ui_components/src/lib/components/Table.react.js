@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import MaterialTable from 'material-table'
 import PropTypes from 'prop-types'
 
@@ -7,12 +7,22 @@ import PropTypes from 'prop-types'
  */
 
 export default function Table(props) {
-  const {data: _, editable, setProps, payload, ...rest} = props
+  const {data: _, editable, setProps, payload, options: optionsProp, ...rest} = props
   const [data, setData] = useState(props.data)
+
+  const options = useMemo(() => {
+    return {
+      ...optionsProp,
+      rowStyle: Array.isArray(optionsProp.rowStyle)
+        ? row => optionsProp.rowStyle[row.tableData.id]
+        : optionsProp.rowStyle
+    }
+  }, [optionsProp])
 
   return (
     <MaterialTable
       {...rest}
+      options={options}
       data={data}
       editable={!editable ? undefined : {
         onRowAdd: newData =>
@@ -419,7 +429,7 @@ Table.propTypes = {
     pageSizeOptions: PropTypes.arrayOf(PropTypes.number),
     paginationType: PropTypes.oneOf(["normal", "stepped"]),
     paginationPosition: PropTypes.oneOf(["bottom", "top", "both"]),
-    rowStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+    rowStyle: PropTypes.any,
     search: PropTypes.bool,
     searchText: PropTypes.string,
     toolbarButtonAlignment: PropTypes.oneOf(["left", "right"]),

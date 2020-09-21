@@ -169,7 +169,7 @@ those elements have the following types:
   - pagesizeoptions (list of numerics; optional)
   - paginationtype (a value equal to: "normal", "stepped"; optional)
   - paginationposition (a value equal to: "bottom", "top", "both"; optional)
-  - rowstyle (named list; optional)
+  - rowstyle (logical | numeric | character | named list | unnamed list; optional)
   - search (logical; optional)
   - searchtext (character; optional)
   - toolbarbuttonalignment (a value equal to: "left", "right"; optional)
