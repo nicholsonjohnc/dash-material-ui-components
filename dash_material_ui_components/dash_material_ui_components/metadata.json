@@ -120,33 +120,1606 @@
         "required": false,
         "description": "The ID used to identify this component in Dash callbacks."
       },
-      "title": {
+      "editable": {
         "type": {
-          "name": "string"
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether the table is editable"
+      },
+      "payload": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Data that is passed to callbacks when an edit event has occured."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes to Dash, to make them available for callbacks."
+      },
+      "actions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "union",
+            "value": [
+              {
+                "name": "func"
+              },
+              {
+                "name": "shape",
+                "value": {
+                  "icon": {
+                    "name": "union",
+                    "value": [
+                      {
+                        "name": "element"
+                      },
+                      {
+                        "name": "func"
+                      },
+                      {
+                        "name": "string"
+                      },
+                      {
+                        "name": "custom",
+                        "raw": "RefComponent"
+                      }
+                    ],
+                    "required": true
+                  },
+                  "isFreeAction": {
+                    "name": "bool",
+                    "required": false
+                  },
+                  "position": {
+                    "name": "enum",
+                    "value": [
+                      {
+                        "value": "\"auto\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"toolbar\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"toolbarOnSelect\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"row\"",
+                        "computed": false
+                      }
+                    ],
+                    "required": false
+                  },
+                  "tooltip": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "onClick": {
+                    "name": "func",
+                    "required": true
+                  },
+                  "iconProps": {
+                    "name": "object",
+                    "required": false
+                  },
+                  "disabled": {
+                    "name": "bool",
+                    "required": false
+                  },
+                  "hidden": {
+                    "name": "bool",
+                    "required": false
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "columns": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "cellStyle": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "object"
+                  },
+                  {
+                    "name": "func"
+                  }
+                ],
+                "required": false
+              },
+              "currencySetting": {
+                "name": "shape",
+                "value": {
+                  "locale": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "currencyCode": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "minimumFractionDigits": {
+                    "name": "number",
+                    "required": false
+                  },
+                  "maximumFractionDigits": {
+                    "name": "number",
+                    "required": false
+                  }
+                },
+                "required": false
+              },
+              "customFilterAndSearch": {
+                "name": "func",
+                "required": false
+              },
+              "customSort": {
+                "name": "func",
+                "required": false
+              },
+              "defaultFilter": {
+                "name": "any",
+                "required": false
+              },
+              "defaultSort": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "\"asc\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"desc\"",
+                    "computed": false
+                  }
+                ],
+                "required": false
+              },
+              "editComponent": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "element"
+                  },
+                  {
+                    "name": "func"
+                  }
+                ],
+                "required": false
+              },
+              "emptyValue": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "node"
+                  },
+                  {
+                    "name": "func"
+                  }
+                ],
+                "required": false
+              },
+              "export": {
+                "name": "bool",
+                "required": false
+              },
+              "field": {
+                "name": "string",
+                "required": false
+              },
+              "filtering": {
+                "name": "bool",
+                "required": false
+              },
+              "filterCellStyle": {
+                "name": "object",
+                "required": false
+              },
+              "filterPlaceholder": {
+                "name": "string",
+                "required": false
+              },
+              "filterComponent": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "element"
+                  },
+                  {
+                    "name": "func"
+                  }
+                ],
+                "required": false
+              },
+              "grouping": {
+                "name": "bool",
+                "required": false
+              },
+              "headerStyle": {
+                "name": "object",
+                "required": false
+              },
+              "hidden": {
+                "name": "bool",
+                "required": false
+              },
+              "hideFilterIcon": {
+                "name": "bool",
+                "required": false
+              },
+              "initialEditValue": {
+                "name": "any",
+                "required": false
+              },
+              "lookup": {
+                "name": "object",
+                "required": false
+              },
+              "editable": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "enum",
+                    "value": [
+                      {
+                        "value": "\"always\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"onUpdate\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"onAdd\"",
+                        "computed": false
+                      },
+                      {
+                        "value": "\"never\"",
+                        "computed": false
+                      }
+                    ]
+                  }
+                ],
+                "required": false
+              },
+              "removable": {
+                "name": "bool",
+                "required": false
+              },
+              "render": {
+                "name": "func",
+                "required": false
+              },
+              "searchable": {
+                "name": "bool",
+                "required": false
+              },
+              "sorting": {
+                "name": "bool",
+                "required": false
+              },
+              "title": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "element"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ],
+                "required": false
+              },
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "\"string\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"boolean\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"numeric\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"date\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"datetime\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"time\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"currency\"",
+                    "computed": false
+                  }
+                ],
+                "required": false
+              }
+            }
+          }
         },
         "required": true,
-        "description": "Material Table title"
+        "description": ""
       },
-      "rowColor": {
+      "components": {
         "type": {
-          "name": "string"
+          "name": "shape",
+          "value": {
+            "Action": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Actions": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Body": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Cell": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Container": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "EditField": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "EditRow": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "FilterRow": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Groupbar": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "GroupRow": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Header": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "OverlayLoading": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "OverlayError": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Pagination": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Row": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            },
+            "Toolbar": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "StyledComponent"
+                }
+              ],
+              "required": false
+            }
+          }
         },
         "required": false,
-        "description": "Material Table Row Color"
-      },
-      "headerColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Material Table Header Color"
+        "description": ""
       },
       "data": {
         "type": {
-          "name": "array"
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "object"
+              }
+            },
+            {
+              "name": "func"
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "detailPanel": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "func"
+                  },
+                  {
+                    "name": "shape",
+                    "value": {
+                      "disabled": {
+                        "name": "bool",
+                        "required": false
+                      },
+                      "icon": {
+                        "name": "union",
+                        "value": [
+                          {
+                            "name": "element"
+                          },
+                          {
+                            "name": "func"
+                          },
+                          {
+                            "name": "string"
+                          },
+                          {
+                            "name": "custom",
+                            "raw": "RefComponent"
+                          }
+                        ],
+                        "required": false
+                      },
+                      "openIcon": {
+                        "name": "union",
+                        "value": [
+                          {
+                            "name": "element"
+                          },
+                          {
+                            "name": "func"
+                          },
+                          {
+                            "name": "string"
+                          },
+                          {
+                            "name": "custom",
+                            "raw": "RefComponent"
+                          }
+                        ],
+                        "required": false
+                      },
+                      "tooltip": {
+                        "name": "string",
+                        "required": false
+                      },
+                      "render": {
+                        "name": "func",
+                        "required": true
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         "required": false,
-        "description": "Material Table Data"
+        "description": ""
+      },
+      "icons": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "Add": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Check": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Clear": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Delete": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "DetailPanel": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Edit": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Export": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Filter": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "FirstPage": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "LastPage": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "NextPage": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "PreviousPage": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Refresh": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "ResetSearch": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "Search": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "SortArrow": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "ThirdStateCheck": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            },
+            "ViewColumn": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "element"
+                },
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "custom",
+                  "raw": "RefComponent"
+                }
+              ],
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "isLoading": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "title": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "options": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "actionsCellStyle": {
+              "name": "object",
+              "required": false
+            },
+            "editCellStyle": {
+              "name": "object",
+              "required": false
+            },
+            "detailPanelColumnStyle": {
+              "name": "object",
+              "required": false
+            },
+            "actionsColumnIndex": {
+              "name": "number",
+              "required": false
+            },
+            "addRowPosition": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"first\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"last\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "columnsButton": {
+              "name": "bool",
+              "required": false
+            },
+            "defaultExpanded": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "func"
+                }
+              ],
+              "required": false
+            },
+            "debounceInterval": {
+              "name": "number",
+              "required": false
+            },
+            "detailPanelType": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"single\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"multiple\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "doubleHorizontalScroll": {
+              "name": "bool",
+              "required": false
+            },
+            "emptyRowsWhenPaging": {
+              "name": "bool",
+              "required": false
+            },
+            "exportAllData": {
+              "name": "bool",
+              "required": false
+            },
+            "exportButton": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "bool"
+                },
+                {
+                  "name": "shape",
+                  "value": {
+                    "csv": {
+                      "name": "bool",
+                      "required": false
+                    },
+                    "pdf": {
+                      "name": "bool",
+                      "required": false
+                    }
+                  }
+                }
+              ],
+              "required": false
+            },
+            "exportDelimiter": {
+              "name": "string",
+              "required": false
+            },
+            "exportFileName": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "func"
+                }
+              ],
+              "required": false
+            },
+            "exportCsv": {
+              "name": "func",
+              "required": false
+            },
+            "filtering": {
+              "name": "bool",
+              "required": false
+            },
+            "filterCellStyle": {
+              "name": "object",
+              "required": false
+            },
+            "filterRowStyle": {
+              "name": "object",
+              "required": false
+            },
+            "header": {
+              "name": "bool",
+              "required": false
+            },
+            "headerSelectionProps": {
+              "name": "object",
+              "required": false
+            },
+            "headerStyle": {
+              "name": "object",
+              "required": false
+            },
+            "hideFilterIcons": {
+              "name": "bool",
+              "required": false
+            },
+            "initialPage": {
+              "name": "number",
+              "required": false
+            },
+            "maxBodyHeight": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "number"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "required": false
+            },
+            "minBodyHeight": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "number"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "required": false
+            },
+            "loadingType": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"overlay\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"linear\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "overflowY": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"visible\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"hidden\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"scroll\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"auto\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"initial\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"inherit\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "padding": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"default\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"dense\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "paging": {
+              "name": "bool",
+              "required": false
+            },
+            "pageSize": {
+              "name": "number",
+              "required": false
+            },
+            "pageSizeOptions": {
+              "name": "arrayOf",
+              "value": {
+                "name": "number"
+              },
+              "required": false
+            },
+            "paginationType": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"normal\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"stepped\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "paginationPosition": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"bottom\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"top\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"both\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "rowStyle": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                }
+              ],
+              "required": false
+            },
+            "search": {
+              "name": "bool",
+              "required": false
+            },
+            "searchText": {
+              "name": "string",
+              "required": false
+            },
+            "toolbarButtonAlignment": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"left\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"right\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "searchFieldAlignment": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"left\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"right\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "searchFieldStyle": {
+              "name": "object",
+              "required": false
+            },
+            "searchAutoFocus": {
+              "name": "bool",
+              "required": false
+            },
+            "searchFieldVariant": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "\"standard\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"filled\"",
+                  "computed": false
+                },
+                {
+                  "value": "\"outlined\"",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "selection": {
+              "name": "bool",
+              "required": false
+            },
+            "selectionProps": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "object"
+                },
+                {
+                  "name": "func"
+                }
+              ],
+              "required": false
+            },
+            "showEmptyDataSourceMessage": {
+              "name": "bool",
+              "required": false
+            },
+            "showFirstLastPageButtons": {
+              "name": "bool",
+              "required": false
+            },
+            "showSelectAllCheckbox": {
+              "name": "bool",
+              "required": false
+            },
+            "showTitle": {
+              "name": "bool",
+              "required": false
+            },
+            "showTextRowsSelected": {
+              "name": "bool",
+              "required": false
+            },
+            "sorting": {
+              "name": "bool",
+              "required": false
+            },
+            "toolbar": {
+              "name": "bool",
+              "required": false
+            },
+            "thirdSortClick": {
+              "name": "bool",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "localization": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "grouping": {
+              "name": "shape",
+              "value": {
+                "groupedBy": {
+                  "name": "string",
+                  "required": false
+                },
+                "placeholder": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "pagination": {
+              "name": "object",
+              "required": false
+            },
+            "toolbar": {
+              "name": "object",
+              "required": false
+            },
+            "header": {
+              "name": "object",
+              "required": false
+            },
+            "body": {
+              "name": "object",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "initialFormData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onSearchChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onFilterChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onColumnDragged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onGroupRemoved": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onSelectionChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChangeRowsPerPage": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChangePage": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChangeColumnHidden": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onOrderChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onRowClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onTreeExpandChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onQueryChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "tableRef": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "page": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "totalCount": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
       }
     }
   }
