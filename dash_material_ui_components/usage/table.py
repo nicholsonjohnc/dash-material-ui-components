@@ -19,11 +19,33 @@ components = (
 			{'state': 'North Carolina', 'num_solar_plants': 4278, 'installed_capacity': 467, 'check': True, 'combbox': 'No'}
 		),
 		columns=(
-			{'title': 'State', 'field': 'state'},
-			{'title': 'Number of Solar Plants', 'field': 'num_solar_plants'},
-			{'title': 'Installed Capacity', 'field': 'installed_capacity'},
-			{'title': 'Check', 'field': 'check', 'type': 'boolean'},
-			{'title': 'Combobox', 'field': 'combbox', 'lookup': {'Yes': 'Yes', 'No': 'No', 'None': 'None'}}
+			{
+				'title': 'State',
+				'field': 'state',
+				'width': 'auto',
+			},
+			{
+				'title': 'Number of Solar Plants',
+				'field': 'num_solar_plants',
+				'width': 'auto',
+			},
+			{
+				'title': 'Installed Capacity',
+				'field': 'installed_capacity',
+				'width': 'auto',
+			},
+			{
+				'title': 'Check',
+				'field': 'check',
+				'type': 'boolean',
+				'width': 'auto',
+			},
+			{
+				'title': 'Combobox',
+				'field': 'combbox',
+				'lookup': {'Yes': 'Yes', 'No': 'No', 'None': 'None'},
+				'width': 'auto',
+			}
 		),
 		options={
 			'columnsButton': True,
@@ -33,7 +55,8 @@ components = (
 			'headerStyle': {
 				'backgroundColor': 'lightgray',
 				'fontWeight': 'bold',
-				'color': 'red'
+				'color': 'red',
+				'padding': '16px'
 			}
 		}
 	),
