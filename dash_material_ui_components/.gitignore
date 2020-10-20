@@ -1,10 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### VisualStudioCode template
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
@@ -97,6 +94,13 @@ bower_components
 
 # node-waf configuration
 .lock-wscript
+
+# dev hmr
+*hmr.js
+*hmr.json
+output.js
+*.min.js
+*.min.js.map
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release

@@ -8,10 +8,15 @@ import {default as MUIButton} from '@material-ui/core/Button';
  * Use the `n_clicks` prop to trigger callbacks when the button has been clicked.
  */
 export default class Button extends Component {
+    constructor(props) {
+        const {setProps, n_clicks} = props
+        super()
+        setProps({n_clicks});
+    }
+
     render() {
         const {id, text, variant, color, href, disableElevation, disabled, n_clicks, setProps} = this.props;
 
-        setProps({n_clicks: n_clicks});
 
         return (
             <MUIButton 

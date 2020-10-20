@@ -7,6 +7,7 @@ const version = "0.0.1"
 
 include("mui_button.jl")
 include("mui_dashmaterialuicomponents.jl")
+include("mui_table.jl")
 
 function __init__()
     DashBase.register_package(
